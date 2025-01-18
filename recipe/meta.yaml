@@ -1,3 +1,4 @@
+{% set python_min = '3.11' %}
 {% set name = "dewret" %}
 {% set version = "0.9.0" %}
 
@@ -6,21 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dewret-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dewret-{{ version }}.tar.gz
   sha256: d0813cd53211cff4afb94e7580aea977c7d4a1fad4743dd6d6787444c9770a04
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.11
+    - python {{ python_min }}
     - hatchling <1.22
     - pip
   run:
-    - python >=3.11
+    - python >={{ python_min }}
     - dask-core >=2022
     - pyyaml
     - attrs
@@ -36,6 +37,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/flaxandteal/dewret/
