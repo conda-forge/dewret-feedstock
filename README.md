@@ -153,6 +153,3 @@ Feedstock Maintainers
 
 * [@philtweir](https://github.com/philtweir/)
 
-
-<!-- dummy commit to enable rerendering -->
-
