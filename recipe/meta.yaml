@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "dewret" %}
-{% set version = "0.12.0" %}
+{% set version = "0.12.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dewret-{{ version }}.tar.gz
-  sha256: b1cf519416df24beffca2bdd6e566d2c3a6d23a8f37d3c47d676a2e661f30392
+  sha256: 10218fa58a694364733a52aab937c79181875cfba19bd2444a2da75d5936fe43
 
 build:
   noarch: python
